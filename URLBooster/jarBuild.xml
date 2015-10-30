@@ -1,0 +1,22 @@
+<project default="jar"> 
+  <target name="jar">
+
+    <delete file="URLBooster.jar"/>
+    <delete file="src/MANIFEST.MF"/>
+  	
+    <manifest file="src/MANIFEST.MF">
+       <attribute name="Class-Path" value="
+       	lib/org.eclipse.swt.jar
+       	lib/org.eclipse.swt.win32.jar
+       	"/>
+       <attribute name="Built-By" value="${user.name}"/>
+       <attribute name="Main-Class" value="com.u8t.urlbooster.Main"/>
+    </manifest>
+  	
+    <jar destfile="URLBooster.jar"
+         basedir="./bin"
+         includes="**/*.class images/*.*"
+    	 manifest="src/MANIFEST.MF"
+         />
+  </target>
+</project>

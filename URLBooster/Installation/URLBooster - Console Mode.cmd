@@ -1,0 +1,1 @@
+java -jar URLBooster.jar -console

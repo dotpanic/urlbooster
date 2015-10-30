@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment></comment>
+<entry key="WeightEnvironment">11</entry>
+<entry key="Miniville">ultim8team</entry>
+<entry key="WeightTransport">10</entry>
+<entry key="ObjectiveIndustry">0</entry>
+<entry key="MaxThreadCount">15</entry>
+<entry key="WeightIndustry">17</entry>
+<entry key="StatisticsRefreshInterval">300</entry>
+<entry key="Iterations">1</entry>
+<entry key="GoodProxiesPath">good - &lt;ts&gt;.txt</entry>
+<entry key="SaveGoodProxies">true</entry>
+<entry key="ProxiesSeparator">:</entry>
+<entry key="ProxiesOrder">File</entry>
+<entry key="ObjectiveSecurity">0</entry>
+<entry key="ProxiesPath">proxies.txt</entry>
+<entry key="WeightSecurity">12</entry>
+<entry key="ConfigType">Miniville</entry>
+<entry key="ObjectiveTransport">100</entry>
+<entry key="ObjectiveCitizen">10000000</entry>
+<entry key="ObjectiveBusiness">0</entry>
+<entry key="HitMode">Intelligent</entry>
+<entry key="EmitBeep">false</entry>
+<entry key="WeightBusiness">0</entry>
+<entry key="ExcludeGoodProxies">true</entry>
+<entry key="HTTPConnectionTimeout">20</entry>
+<entry key="ProxyType">Http</entry>
+<entry key="MaxThreadsInactivity">30</entry>
+<entry key="DebugLevel">Severe</entry>
+<entry key="ResolveNameServers">true</entry>
+<entry key="ObjectiveEnvironment">0</entry>
+<entry key="SaveBadProxies">false</entry>
+<entry key="WeightCitizen">50</entry>
+<entry key="BadProxiesPath">bad.txt</entry>
+</properties>

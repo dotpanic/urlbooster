@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.4
+Created-By: 1.8.0_66-b17 (Oracle Corporation)
+Built-By: DoT
+Main-Class: com.u8t.urlbooster.Main
+Class-Path:          lib/org.eclipse.swt.jar         lib/org.eclipse.s
+ wt.win32.jar         
+

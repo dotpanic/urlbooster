@@ -1,0 +1,1 @@
+java -jar Miniville.jar exemple-miniville-ultim8team.ini

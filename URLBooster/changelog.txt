@@ -1,0 +1,187 @@
+CHANGELOG
+
+version 2.2.4 - 27/06/2009
+- mise à jour des entêtes HTTP avec les nouveaux cookies Antiville
+- correction problème de lancement du mode console
+
+version 2.2.3 - 23/12/2008 - Christmas Edition
+- mise à jour des entêtes HTTP avec les nouveaux cookies Miniville et Minicity
+
+version 2.2.2 - 05/08/2008
+- Compilation avec JDK 6.0. Il est nécessaire d’installer un nouveau JRE pour ceux qui disposaient d’un JRE <= 5.0
+- Mise à jour des jars SWT (simplification de la procédure d’installation) 
+
+version 2.2.1 - 26/04/2008
+- correction problème URLFactories en mode multi urls
+- correction pb Socks then Http
+
+version 2.2.0 - 10/04/2008
+- possibilité de spécifier plusieurs villes ou URLs séparées par un point-virgule.
+  Exemple : "ville1;ville2;ville3;ville4". Lorsqu'un hit répond correctement, le proxy
+  est utilisé pour hitter toutes les autres villes/URLs. On peut donc faire évoluer
+  une quantité énorme de villes en même temps. Cette possibilité fonctionne également
+  avec Antiville...  
+- Proxies Types : nouvelle prise en compte des proxies de type Socks.
+  4 options existent :
+  - Http : les proxies seront considérés comme des proxies HTTP
+  - Http then Socks : les proxies seront d'abord considérés comme des proxies HTTP,
+    puis, s'ils ne répondent pas, un nouvel essai est tenté en mode Socks
+  - Socks then Http : l'inverse...
+  - Socks : les proxies seront considérés comme des proxies Socks
+- Exclude good proxies when iterating : cette option ne prend pas en compte les bons
+  proxies contenus dans le fichier good lors des itérations. Cette option peut devenir
+  très puissante si on l'utilise en conjonction avec les tags spéciaux.
+  Par exemple, vous souhaitez que, chaque jour, tous les proxies soient testés, mais
+  que les bons proxies ne soient pas retestés à chaque itération. Il suffit alors
+  de faire changer le nom du fichier good automatiquement chaque jour à l'aide par
+  exemple du tag <ts>, en appelant par exemple le fichier de goods "good - <ts>.txt".
+  On peut pousser plus loin en réinitialisant le fichier toutes les heures par example
+  "good - <ts><hh>.txt". De futurs tags permettront de mieux contrôler cette option.
+- Use validator : possibilité d'utiliser ou non le Validator pour Miniville/Antiville
+- Validator is a regular expression : permet d'indiquer si le validator est une
+  expression régulière
+- le nom du fichier proxies supporte les tags spéciaux
+- modification de la police de caractère de l'execution board
+- rajout d'une barre de progression à l'execution board
+- L'execution board peut être redimensionné
+- affichage de la config au début des itérations
+- amélioration de l'affichage de certaines erreurs
+- pas mal de modifs au niveau du code et correction de quelques bugs mineurs
+- mise à jour de la config par défaut
+
+version 2.0.6 - 26/03/2008
+- les urls génériques et les noms de fichiers good et bad supportent les tags spéciaux
+  suivants : <yy>, <yyyy>, <year>, <mm>, <month>, <dd>, <day>, <hh>, <hour>, <mm>, <minutes>,
+  <ss>, <seconds>, <ts>, <timestamp>, <fts> et <fulltimestamp>
+- les urls génériques supportent les tags spéciaux suivants : <count>, <rslo:n>,
+  <randomStringLowerOnly:n>, <rsuo:n>, <randomStringUpperOnly:n>, <rsdo:n>, <randomStringDigitsOnly:n>,
+  <rsld:n>, <randomStringLowerDigit:n>, <rsud:n>, <randomStringUpperDigit:n>, <rsul:n>,
+  <randomStringUpperLower:n>, <rsuld:n>, <randomStringUpperLowerDigit:n> et <rs(a)(b):n>
+- les urls génériques ne supportent plus les tags spéciaux suivants : <r1> à <r9>
+
+version 2.0.5 - 24/03/2008
+- erreurs proxy mieux détaillées
+- HTTP Headers : tirage aléatoire des User-Agent et Accept-Language
+- les urls génériques supportent les tags spéciaux suivants :
+  <r1> : nombre aléatoire sur 1 position
+  <r2> : nombre aléatoire sur 2 positions
+  ...
+  <r9> : nombre aléatoire sur 9 positions
+  <c>  : compteur incrémental
+  exemple d'utilisation : http://www.monurl.com/?page=<r2>
+
+version 2.0.4 - 03/03/2008
+- Faute Goog -> Good au niveau du Gui
+- nouveau serveur pour le validator d'Antiville
+- utilisation swt-3.3.1.1 : recopie des fichiers dll obligatoire !
+
+version 2.0.3 - 28/02/2008
+- modification du validator Miniville suite aux modifs apportées par Motion-Twin
+- modif du comportement GUI lors de la sélection du HitMode
+- correction d'un problème de timeout
+- modification du shortcut de debug
+
+version 2.0.2 - 30/01/2008
+- nouvelle méthode de détection des hits à l'aide d'un validator http. Le nombre de hits
+  constatés est considérablement réduit, et il s'approche beaucoup plus de la réalité.
+  Le fichier good ne comporte maintenant que des proxies valides et fonctionnels
+- correction comportement GUI qui empêchait des poids et des objectifs = 0
+
+version 2.0.1 - 29/01/2008
+- correction bug statistiques
+- quelques images manquantes rajoutées
+
+version 2.0.0 - 26/01/2008
+- ajout d’une interface utilisateur
+- remaniement conséquent de la structure de l’application
+- publication des sources sur un serveur SVN : amélioration du versioning
+- renommage de l’application (URL Booster -> URLBooster)
+- nouveau format de fichier de config (rétrocompatibilité assurée)
+- la version GUI supporte les instances d’exécution multiples
+- option de nettoyage automatique des proxies
+- possibilité d'interrompre et de reprendre une tâche d'exécution
+- Miniville : plus de clicks inutiles en mode Intelligent sur des liens alors qu’ils ne
+  sont pas encore actifs (naissance de la ville)
+- lancement du site URLBooster
+- suppression des références à un-click-pour-la-foret.com (site fermé)
+
+version 1.6.0 beta (dotpanic is back, physically and mentally!) - 23/01/2008
+- passage du programme sous license GPL
+- Ajout des options pour myminicity.com
+- Passage de 60 secondes à 300 secondes pour la récupération des statistiques afin d'éviter
+  le banissement potentiel
+- Rajout des options SaveBadProxies et BadProxiesPath
+- Rajout de l'option StatisticsRefreshInterval
+- Correction problème de reload du fichier HTTP des proxies relevé par GL666
+- Redesign complet du programme en vue du passage au GUI
+
+Version 1.5.1
+- Correction bug statistiques
+- Généralisation de la méthode (ajout de l'option generic). Tout site ne demandant pas
+  d'options particulières (cookies spécifiques) peut être visité selon le même principe.
+
+Version 1.5.0
+- Correction bug proxies (http://creermaville.xooit.com/t1239-Miniville-Antiville-Cheating.htm?start=525#146388)
+- Interrogation des proxies selon l'ordre alphabétique ou selon l'ordre défini dans le fichier proxies.
+- Statistiques en fin d'exécution
+- Remplacement du mode sans fin par le nombre d'itération à effectuer
+- Attente d'une entrée utilisateur en fin d'exécution
+- Ajout de l'option LogLevel pour debuggage et implémentation Logger
+- Indication du nombre d'entrées lues dans le fichier proxies
+- Rajout options pour un-click-pour-la-foret.com
+- Expérimental : spécification d'objectifs étranges (85% transport par exemple)
+- Modifications cosmétiques
+
+Version 1.4.2
+- Correction problème mode INTELLIGENT
+
+Version 1.4.1
+- Rajout du paramètre MaxThreadsInactivity
+- L'unité du paramètre HTTPConnectionTimeout est la seconde (milliseconde précédemment)
+- Révision du locking du fichier des bons proxies
+
+Version 1.4.0
+- Fusion des projets Miniville et Antiville. Un paramètre a été rajouté dans le fichier de
+  configuration pour indiquer le type de fonctionnement : ConfigType
+- Possibilité de spécifier un fichier de configuration à utiliser. Ceci permet de gérer
+  plusieurs villes sans multiplier les répertoires, mais juste en couplant un .cmd avec
+  un .ini. L'archive contient deux exemples (antiville-maville et miniville-ultim8team).
+  Note : le programme est normalement capable de gérer l'écriture des bons proxies dans un
+  fichier unique lorsque plusieurs programmes tournent en parallèle, mais il est peut-être
+  préférable d'utiliser un fichier de goods par ville gérée. Je n'ai pas pu tester en profondeur...
+- L'exécuteur de processus est réinitialisé si aucune activité n'est détectée depuis plus
+  de 15 secondes (30 précédemment).
+- Possibilité de récupérer le fichier proxies directement sur le web en indiquant une
+  adresse HTTP (voir fichier de config pour l'exemple)
+- Réorganisation du code pour une plus grande modularité
+- Quelques modifications cosmétiques
+
+Version 1.3.1
+- Possibilité d'émettre un beep à chaque fois qu'un bon proxy est trouvé (paramètre EmitBeep
+  dans le fichier de config)
+
+Version 1.3.0
+- Rajout du paramètre EndlessMode dans le fichier de configuration (Miniville + Antiville).
+  Si ce mode est activé, le programme tourne en boucle sans jamais s'arrêter.
+- Vérification des doublons dans le fichier good.txt avant de rajouter un nouveau proxy.
+- Remise à niveau du module Antiville sur le même principe que le module Miniville
+
+Version 1.2.0
+- Au bout d'un certain temps, plus aucun processus n'était lancé, et une longue série de points (".")
+  s'affichait. Pour une raison inconnue, certains processus ne respectent pas le timeout imposé.
+  Lorsque tous les processus semblent bloqués pendant plus de 30 secondes, l'exécuteur de
+  processus est réinitialisé.
+- Mise à jour de la logique d'exécution des processus (utilisation d'un Java Executor).
+
+Version 1.1.1
+- .jar incorrect -> repackaging
+
+Version 1.1.0
+rajout/modif des paramètres suivants dans le fichier de config :
+- Rajout du poids des URLs pour le mode PSEUDORANDOM
+- Rajout du timeout de connexion
+- Rajout du nombre de processus concurrents
+- Le fichier proxies.txt est récupéré dans le répertoire courant (précédemment dans c:\proxies.txt)
+
+Version 1.0.0 - 19/07/2007
+- version originale

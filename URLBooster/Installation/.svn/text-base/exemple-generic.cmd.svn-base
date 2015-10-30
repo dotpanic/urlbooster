@@ -1,0 +1,1 @@
+java -jar Miniville.jar exemple-generic.ini
