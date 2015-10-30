@@ -1,3 +1,9 @@
+package com.cloudgarden.resource;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Vector;
+
 import org.eclipse.swt.events.DisposeEvent;
 import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.graphics.Color;
